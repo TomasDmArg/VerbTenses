@@ -1,0 +1,24 @@
+import React from "react";
+import { useRouter } from "next/router";
+import Image from "next/image";
+
+export const Card = ({ bgimg, name, desc, url }) => {
+  const router = useRouter();
+  const urlRoute = router.pathname;
+  return (
+    <section
+      className="components__card"
+      onClick={() => {
+        router.push(url);
+      }}
+    >
+      <section className="components__card--img">
+        <Image src={bgimg} alt={name} layout="fill" />
+      </section>
+      <section className="components__card--content">
+        <h3 className="components__card--title">{name}</h3>
+        <p className="components__card--text">{desc}</p>
+      </section>
+    </section>
+  );
+};
