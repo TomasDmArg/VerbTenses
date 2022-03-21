@@ -6,6 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.config = void 0;
 // Global configuration
 var config = {
-  domain: "https://verb-tenses.vercel.app"
+  domain: "https://vt.tmdm.com.ar"
 };
 exports.config = config;

@@ -20,7 +20,7 @@ const Page = () => {
   // Image = cardX.svg -> bg = cardX-bg.svg (add bg between card and .svg)
   let bg = (data) ? data.image.replace(".svg", "-bg.svg") : "";
   let route = data ? `/tenses/${router.query.id}` : "/";
-  let url = data ? `https://verbtenses2.vercel.app/tenses/${router.query.id}` : "/";
+  let url = data ? `https://vt.tmdm.com.ar/tenses/${router.query.id}` : "/";
   console.log(route);
   return (
     <React.Fragment>
