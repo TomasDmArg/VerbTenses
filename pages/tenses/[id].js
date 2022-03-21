@@ -18,7 +18,7 @@ const Page = () => {
     setData(articles[urlRoute]);
   }, [router.isReady && router.query.id]);
   // Image = cardX.svg -> bg = cardX-bg.svg (add bg between card and .svg)
-  let bg = (data) ? data.image.replace(".", "-bg.") : "";
+  let bg = (data) ? data.image.replace(".svg", "-bg.svg") : "";
   let route = data ? `/tenses/${router.query.id}` : "/";
   let url = data ? `https://verbtenses2.vercel.app/tenses/${router.query.id}` : "/";
   console.log(route);
