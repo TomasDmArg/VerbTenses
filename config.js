@@ -1,4 +1,4 @@
 // Global configuration
 export const config = {
-  domain: "localhost:3000",
+  domain: "https://verb-tenses.vercel.app/",
 }
