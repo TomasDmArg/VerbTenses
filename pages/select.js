@@ -24,7 +24,7 @@ const Page = () => {
           {
             urls.map((url) => {
               let article = articles[url];
-              let img = "/" + article.image.split('/')[1];
+              let img = "/c" + article.image.split('/c')[1];
               return (
                 <Card
                   key={url}
