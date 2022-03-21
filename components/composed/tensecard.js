@@ -5,7 +5,7 @@ import Image from "next/image";
 export const Card = ({ bgimg, name, desc, url }) => {
   const router = useRouter();
   const urlRoute = router.pathname;
-  let img = "/" + bgimg.split("/")[1];
+  let img = "/." + bgimg.split("/.")[1];
   return (
     <section
       className="components__card"
