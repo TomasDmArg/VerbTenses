@@ -40,7 +40,7 @@ const Page = () => {
                   </a>
                 </Link>
               </section>
-              <section className="main-article__header" style={{ backgroundImage: `url(http://${bg})` }}>
+              <section className="main-article__header" style={{ backgroundImage: `url(${bg})` }}>
                 <h1 className="main-article__header--title">
                   {data.content.title}
                 </h1>
