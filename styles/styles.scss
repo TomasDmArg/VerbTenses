@@ -1,3 +1,4 @@
+@import "@code-hike/mdx/dist/index.css";
 // Import Poppins from google fonts
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 $primary: #12130F;
@@ -116,7 +117,8 @@ body{
   @extend .fade;
   animation-duration: 0.5s;
   &__card-cont{
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     width: calc(100vw - 8rem);
     height: calc(70vh - 8rem);
     margin-top: 3rem;
@@ -130,11 +132,12 @@ body{
   position: relative;
   width: 20vw;
   height: 50vh;
+  margin-bottom: 4rem;
   cursor: pointer;
   &--img{
     position: relative;
-    width: 20vw;
-    height: 50vh;  
+    width: 300px;
+    height: 100%;  
   }
   &--content{
     position: absolute;
@@ -296,3 +299,91 @@ body{
 ::-webkit-scrollbar-thumb:hover {
   background: #171717; 
 } 
+.menu-icon, .only-mobile, .close{
+  display: none;
+}
+@media (max-width: 768px) {
+  .components__essential--title{
+    max-width: 80vw;
+    word-wrap: break-word;
+  }
+  .components__card{
+    &--content{
+      top: 20vh;
+      left: 4rem;
+    }
+    &--title{
+      font-size: 2.5rem;
+    }
+    &--img{
+    position: relative;
+    width: 212px;
+    height: 100%;
+    }
+    &--text{
+      min-width: 70vw;
+    }
+  }
+  .components__bg-img{
+    display: none;
+  }
+  .header__nav{
+    display: none;
+    & > .close{
+      display: block;
+    }
+    &.mb-toggle-enabled{
+      position: absolute;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      left: 0rem;
+      top: 0rem;
+      .close{
+        display: block;
+        display: flex;
+        align-items: center;
+        font-size: 1.7rem;
+        background-color: #ff411f70;
+        text-decoration: none;
+        color: #171717;
+        & > svg{
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+      & > a{
+        background-color: $primary;
+        color: $bg;
+        margin: 0;
+        padding: 2rem 2rem ;
+      }
+    }
+  }
+  .header{
+    font-size: 50px;
+    & > .menu-icon{
+      display: block;
+      position: absolute;
+      right: 2.2rem;
+      top: 2.2rem;
+      cursor: pointer;
+    }
+  }
+  .main-article{
+    padding: 1rem;
+    &__header{
+      padding: 3rem;
+    }
+    &__content--example{
+      max-width: 80vw;
+    }
+    &__stats--text > b, &__stats--text > button{
+      display: none;
+    }
+  }
+  .only-mobile{
+    display: block;
+  }
+}

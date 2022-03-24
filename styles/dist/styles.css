@@ -4,7 +4,7 @@
   margin: 0mm;
   padding: 0mm;
   font-family: "Poppins", sans-serif;
-  color: #12130F;
+  color: #12130f;
 }
 
 html {
@@ -12,12 +12,12 @@ html {
 }
 
 body {
-  background-color: #EAE6E5;
+  background-color: #eae6e5;
 }
 
 .components__essential--title {
   font-size: 40px;
-  color: #12130F;
+  color: #12130f;
 }
 .components__essential--button {
   margin-top: 3rem;
@@ -25,8 +25,8 @@ body {
   height: 5rem;
   padding-left: 4rem;
   border: none;
-  background-color: #12130F;
-  color: #EAE6E5;
+  background-color: #12130f;
+  color: #eae6e5;
   font-weight: 700;
   font-size: 1.5rem;
   display: flex;
@@ -56,7 +56,7 @@ body {
 .components__essential--link {
   display: inline-flex;
   text-decoration: none;
-  color: #12130F;
+  color: #12130f;
   font-size: 1.7rem;
   margin: 0 2rem;
 }
@@ -106,7 +106,9 @@ body {
   animation-iteration-count: 1;
 }
 
-.fade, .main-select__card-cont, .main-select {
+.fade,
+.main-select__card-cont,
+.main-select {
   animation-name: fade;
   animation-timing-function: cubic-bezier(1, 0, 0.91, 0.17);
   animation-fill-mode: forwards;
@@ -118,7 +120,8 @@ body {
   animation-duration: 0.5s;
 }
 .main-select__card-cont {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   width: calc(100vw - 8rem);
   height: calc(70vh - 8rem);
   margin-top: 3rem;
@@ -130,13 +133,14 @@ body {
   position: relative;
   width: 20vw;
   height: 50vh;
+  margin-bottom: 4rem;
   cursor: pointer;
   transition: all ease-in-out 0.2s;
 }
 .components__card--img {
   position: relative;
-  width: 20vw;
-  height: 50vh;
+  width: 300px;
+  height: 100%;
 }
 .components__card--content {
   position: absolute;
@@ -152,12 +156,12 @@ body {
   font-weight: 700;
   height: 10rem;
   align-items: center;
-  color: #12130F;
+  color: #12130f;
 }
 .components__card--text {
   max-width: 13vw;
   font-size: 1.5rem;
-  color: #12130F;
+  color: #12130f;
 }
 .components__card:hover {
   transform: scale(1.1);
@@ -231,24 +235,25 @@ body {
   margin: 1rem 0;
 }
 .main-article__content--table th {
-  color: #EAE6E5;
-  background-color: #12130F;
+  color: #eae6e5;
+  background-color: #12130f;
 }
 .main-article__content--table td {
   background-color: rgba(18, 19, 15, 0.1);
 }
-.main-article__content--table td, .main-article__content--table th {
+.main-article__content--table td,
+.main-article__content--table th {
   text-align: left;
-  border: 1px solid #12130F;
+  border: 1px solid #12130f;
   padding: 1rem 8rem 1rem 2rem;
   font-size: 1.7rem;
 }
 .main-article__content--example {
   text-align: left;
   max-width: 50vw;
-  color: #EAE6E5;
-  background-color: #12130F;
-  border-bottom: 1px solid #EAE6E5;
+  color: #eae6e5;
+  background-color: #12130f;
+  border-bottom: 1px solid #eae6e5;
   padding: 0.5rem 8rem 0.5rem 2rem;
   font-size: 1.7rem;
 }
@@ -290,4 +295,101 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #171717;
+}
+
+.menu-icon,
+.only-mobile,
+.close {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .components__essential--title {
+    max-width: 80vw;
+    word-wrap: break-word;
+  }
+
+  .components__card--content {
+    top: 20vh;
+    left: 4rem;
+  }
+  .components__card--title {
+    font-size: 2.5rem;
+  }
+  .components__card--img {
+    position: relative;
+    width: 212px;
+    height: 100%;
+  }
+  .components__card--text {
+    min-width: 70vw;
+  }
+
+  .components__bg-img {
+    display: none;
+  }
+
+  .header__nav {
+    display: none;
+  }
+  .header__nav > .close {
+    display: block;
+  }
+  .header__nav.mb-toggle-enabled {
+    position: absolute;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    left: 0rem;
+    top: 0rem;
+  }
+  .header__nav.mb-toggle-enabled .close {
+    display: block;
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem;
+    background-color: #ff411f70;
+    text-decoration: none;
+    color: #171717;
+  }
+  .header__nav.mb-toggle-enabled .close > svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .header__nav.mb-toggle-enabled > a {
+    background-color: #12130f;
+    color: #eae6e5;
+    margin: 0;
+    padding: 2rem 2rem;
+  }
+
+  .header {
+    font-size: 50px;
+  }
+  .header > .menu-icon {
+    display: block;
+    position: absolute;
+    right: 2.2rem;
+    top: 2.2rem;
+    cursor: pointer;
+  }
+
+  .main-article {
+    padding: 1rem;
+  }
+  .main-article__header {
+    padding: 3rem;
+  }
+  .main-article__content--example {
+    max-width: 80vw;
+  }
+  .main-article__stats--text > b,
+  .main-article__stats--text > button {
+    display: none;
+  }
+
+  .only-mobile {
+    display: block;
+  }
 }

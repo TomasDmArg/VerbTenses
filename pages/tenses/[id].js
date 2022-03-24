@@ -52,6 +52,7 @@ const Page = () => {
                 <p className="main-article__stats--text">
                   <IoExtensionPuzzle fill="#171717" /> {data.content.dificulty}
                   <IoTime fill="#171717" /> {data.content.minutes_to_read + "'"}
+                  <br class="only-mobile" />
                   <b>Compartir:</b>
                   <WhatsappShareButton url={url}>
                     <WhatsappIcon type="button" size={25} round={true} />
